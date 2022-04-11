@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<title>Login page</title>
+
+<style>
+body{
+background-color:grey;
+}
+</style>
+<script>
+
+
+function validate(form)
+        {
+
+         alert(form.userid.value);
+        var a = /^[A-Z][A-Z][A-Z][A-Z][0-9][0-9][A-Z][A-Z][A-Z][0-9][0-9][0-9]/;
+        var b = /^[A-Z][A-Z][A-Z][A-Z][0-9][0-9][0-9]$/;
+
+        if(a.test(form.userid.value) && b.test(form.pass.value))
+        {
+                var d=new Date();
+                alert("Login successfull\nlogin date:"+d);
+                document.body.style.background="green";
+
+        }
+        else
+        {
+                alert("login unsuccessful");
+                document.body.style.background="red";
+
+        }
+
+}
+
+</script>
+</head>
+
+<body>
+<form>
+<fieldset>
+<legend><b>Regular expression</b></legend>
+
+<div class="pk">
+<p><b><u>|------LOGIN------|</b></u></p>
+<div class="dis1">
+        <label for="id"> USERNAME   :</label><br>
+        <input class="input1" type="text" id="userid">
+<br>
+</div>
+<div class="dis1">
+        <label for="id2"> <span class="r">  PASSWORD  : <span> </label>
+        <br>
+        <input class="input1" type="password" id="pass"><br><br>
+<input type="button" id="b1" onclick="validate(this.form)" value="login">
+<input type="reset" id="r1" value="exit"><br><br>
+
+</div>
+</fieldset>
+</form>
+</div>
+</body>
+</html>
